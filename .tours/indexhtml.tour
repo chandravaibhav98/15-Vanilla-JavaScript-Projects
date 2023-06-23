@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "index.html",
+  "steps": [
+    {
+      "file": "color-flipper/index.html",
+      "description": "nav-bar",
+      "line": 11
+    },
+    {
+      "file": "color-flipper/main.js",
+      "description": "Click Event",
+      "line": 5
+    }
+  ],
+  "ref": "main"
+}
