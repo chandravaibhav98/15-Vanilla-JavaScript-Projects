@@ -1,6 +1,6 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "index.html",
+  "title": "color-flipper",
   "steps": [
     {
       "file": "color-flipper/index.html",
