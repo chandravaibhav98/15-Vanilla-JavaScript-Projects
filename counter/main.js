@@ -1,24 +1,29 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.css';
+// set initial count
+let count = 0;
+// select value & buttons
+const value = document.querySelector('#value');
+const btns = document.querySelectorAll('.btn');
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector('#counter'))
+btns.forEach(function (btn) {
+	btn.addEventListener('click', function (e) {
+		const styles = e.currentTarget.classList;
+		if (styles.contains('decrease')) {
+			count--;
+		} else if (styles.contains('increase')) {
+			count++;
+		} else {
+			count = 0;
+		}
+		if (count > 0) {
+			value.style.color = 'green';
+		}
+		value.textContent = count;
+		if (count < 0) {
+			value.style.color = 'red';
+		}
+		if (count === 0) {
+			value.style.color = '#222';
+		}
+	});
+});
