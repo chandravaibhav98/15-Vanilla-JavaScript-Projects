@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3-reviews",
+  "steps": [
+    {
+      "file": "3-reviews/index.html",
+      "description": "Prev/Next/Random Buttons",
+      "line": 30
+    },
+    {
+      "file": "3-reviews/main.js",
+      "description": "DOMContentLoaded - currentItem",
+      "line": 46
+    }
+  ],
+  "ref": "main"
+}

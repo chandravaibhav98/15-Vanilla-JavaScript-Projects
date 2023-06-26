@@ -1,24 +1,18 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// classList - shows/gets all classes
+// contains - checks classList for specific class
+// add - add class
+// remove - remove class
+// toggle - toggles class
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const navToggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.links');
 
-setupCounter(document.querySelector('#counter'))
+navToggle.addEventListener('click', function () {
+	console.log(links.classList);
+	if (links.classList.contains('show-links')) {
+		links.classList.remove('show-links');
+	} else {
+		links.classList.add('show-links');
+	}
+	links.classList.toggle('show-links');
+});
