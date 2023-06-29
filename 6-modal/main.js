@@ -1,24 +1,17 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.css';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+// select modal-btn, modal-overlay, close-btn
+// listen for click events on modal-btn and close-btn
+// when user clicks modal-btn add .open-modal to modal-overlay
+// when user clicks close-btn remove .open-modal from modal-overlay
 
-setupCounter(document.querySelector('#counter'))
+const modalBtn = document.querySelector('.modal-btn');
+const modal = document.querySelector('.modal-overlay');
+const closeBtn = document.querySelector('.close-btn');
+
+modalBtn.addEventListener('click', function () {
+	modal.classList.add('open-modal');
+});
+closeBtn.addEventListener('click', function () {
+	modal.classList.remove('open-modal');
+});
