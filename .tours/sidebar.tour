@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5-sidebar",
+  "steps": [
+    {
+      "file": "5-sidebar/main.js",
+      "description": "classList.remove() / classList.remove() VS classList.toggle()",
+      "line": 7
+    }
+  ],
+  "ref": "main"
+}

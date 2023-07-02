@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "7-questions",
+  "steps": [
+    {
+      "file": "7-questions/main.js",
+      "description": "Using Selectors inside the element",
+      "line": 3
+    },
+    {
+      "file": "7-questions/main.js",
+      "description": "Traversing the DOM",
+      "line": 20
+    }
+  ],
+  "ref": "main"
+}
