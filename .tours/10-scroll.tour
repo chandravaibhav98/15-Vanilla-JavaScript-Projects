@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "10-scroll",
+  "steps": [
+    {
+      "file": "10-scroll/main.js",
+      "description": "select links",
+      "line": 56
+    },
+    {
+      "file": "10-scroll/style.css",
+      "description": "smooth-scroll",
+      "line": 62
+    }
+  ],
+  "ref": "main"
+}
