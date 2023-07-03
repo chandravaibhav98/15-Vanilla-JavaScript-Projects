@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "9-video",
+  "steps": [
+    {
+      "file": "9-video/main.js",
+      "description": "Video Pause/Play Slide",
+      "line": 10
+    }
+  ],
+  "ref": "main"
+}
