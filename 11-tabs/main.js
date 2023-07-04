@@ -1,24 +1,23 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.css';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const btns = document.querySelectorAll('.tab-btn');
+const about = document.querySelector('.about');
+const articles = document.querySelectorAll('.content');
 
-setupCounter(document.querySelector('#counter'))
+about.addEventListener('click', function (e) {
+	// console.log(e.target.dataset.id);
+	const id = e.target.dataset.id;
+	if (id) {
+		// remove active from other buttons
+		btns.forEach(function (btn) {
+			btns.classList.remove('active');
+			e.target.classList.add('active');
+		});
+		// hide other articles
+		articles.forEach(function (article) {
+			article.classList.remove('active');
+		});
+		const element = document.getElementById(id);
+		element.classList.add('active');
+	}
+});

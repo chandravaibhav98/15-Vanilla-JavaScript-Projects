@@ -86,7 +86,9 @@ img:not(.logo) {
   width: 100%;
 }
 img {
-  display: center;
+    /*display: center;*/
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h1,
