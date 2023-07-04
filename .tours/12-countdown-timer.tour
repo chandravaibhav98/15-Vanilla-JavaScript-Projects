@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "12-countdown-timer",
+  "steps": [
+    {
+      "file": "12-countdown-timer/main.js",
+      "description": "new Date()",
+      "line": 32
+    }
+  ],
+  "ref": "main"
+}

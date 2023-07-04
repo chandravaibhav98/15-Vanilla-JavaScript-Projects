@@ -2,54 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Countdown timer</title>
+    <title>Countdown</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <div class="section-center">
-        <!--image-->
-        <article class="gift-img">
-            <img src="./public/gift.jpeg" alt="gift picture">
-        </article>
-        <!--info-->
-        <article class="gift-info">
+    <main>
+        <section class="section-center">
+          <!-- image -->
+          <article class="gift-img">
+            <img src="./gift.jpeg" alt="gift" />
+          </article>
+          <!-- info -->
+          <article class="gift-info">
             <h3>iPhone giveaway</h3>
             <h4 class="giveaway">
-                Giveaway ends on Sunday
+              giveaway ends on Sunday, 24 April 2020, 8:00am
             </h4>
-            <p>Enrol now for an iPhone 13 giveaway</p>
+            <p>
+                Enrol for giveaway
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Reprehenderit molestiae cum libero atque ut voluptate qui consectetur
+                aliquid incidunt voluptatem quos, dolore, non commodi quaerat aliquam
+                eligendi, quisquam totam blanditiis.
+            </p>
             <div class="deadline">
-                <div class="deadline-format">
-                    <!--days-->
-                    <div>
-                        <h4 class="days">34</h4>
-                        <span>days</span>
-                    </div>
-                    <!--end of days-->
-                    <!--hours-->
-                    <div>
-                        <h4 class="hours">34</h4>
-                        <span>hours</span>
-                    </div>
-                    <!--end of hours-->
-                    <!--mins-->
-                    <div>
-                        <h4 class="mins">34</h4>
-                        <span>mins</span>
-                    </div>
-                    <!--end of mins-->
-                    <!--secs-->
-                    <div>
-                        <h4 class="secs">34</h4>
-                        <span>secs</span>
-                    </div>
-                    <!--end of secs-->
+              <!-- days -->
+              <div class="deadline-format">
+                <div>
+                  <h4 class="days">34</h4>
+                  <span>days</span>
                 </div>
+              </div>
+              <!-- end of days -->
+              <!-- days -->
+              <div class="deadline-format">
+                <div>
+                  <h4 class="hours">34</h4>
+                  <span>hours</span>
+                </div>
+              </div>
+              <!-- end of days -->
+              <!-- minutes -->
+              <div class="deadline-format">
+                <div>
+                  <h4 class="minutes">34</h4>
+                  <span>mins</span>
+                </div>
+              </div>
+              <!-- end of days -->
+              <!-- minutes -->
+              <div class="deadline-format">
+                <div>
+                  <h4 class="seconds">34</h4>
+                  <span>secs</span>
+                </div>
+              </div>
+              <!-- end of days -->
             </div>
-        </article>
-    </div>
-    <script type="module" src="/main.js"></script>
+          </article>
+        </section>
+    </main>
+    <!-- javascript -->
+    <script src="app.js"></script>
   </body>
 </html>
