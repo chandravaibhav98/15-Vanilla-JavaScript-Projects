@@ -6,6 +6,16 @@
       "file": "12-countdown-timer/main.js",
       "description": "new Date()",
       "line": 32
+    },
+    {
+      "file": "12-countdown-timer/main.js",
+      "description": "getRemainingTime()",
+      "line": 49
+    },
+    {
+      "file": "12-countdown-timer/main.js",
+      "description": "+10 on new run",
+      "line": 35
     }
   ],
   "ref": "main"
