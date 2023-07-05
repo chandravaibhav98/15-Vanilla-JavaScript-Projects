@@ -1,24 +1,43 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import fetchFollowers from './fetchFollowers.js'
+import displayFollowers from './displayFollowers.js'
+import paginate from './paginate.js'
+import displayButtons from './displayButtons.js'
+const title = document.querySelector('.section-title h1')
+const btnContainer = document.querySelector('.btn-container')
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+let index = 0
+let pages = []
 
-setupCounter(document.querySelector('#counter'))
+const setupUI = () => {
+  displayFollowers(pages[index])
+  displayButtons(btnContainer, pages, index)
+}
+
+const init = async () => {
+  const followers = await fetchFollowers()
+  title.textContent = 'pagination'
+  pages = paginate(followers)
+  setupUI()
+}
+
+btnContainer.addEventListener('click', function (e) {
+  if (e.target.classList.contains('btn-container')) return
+  if (e.target.classList.contains('page-btn')) {
+    index = parseInt(e.target.dataset.index)
+  }
+  if (e.target.classList.contains('next-btn')) {
+    index++
+    if (index > pages.length - 1) {
+      index = 0
+    }
+  }
+  if (e.target.classList.contains('prev-btn')) {
+    index--
+    if (index < 0) {
+      index = pages.length - 1
+    }
+  }
+  setupUI()
+})
+
+window.addEventListener('load', init)

@@ -1,24 +1,31 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+const url = 'https://icanhazdadjoke.com/';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const btn = document.querySelector('.btn');
+const result = document.querySelector('.result');
 
-setupCounter(document.querySelector('#counter'))
+btn.addEventListener('click', () => {
+  fetchDadJoke();
+});
+
+const fetchDadJoke = async () => {
+  result.textContent = 'Loading...';
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Accept: 'application/json',
+        'User-Agent': 'learning app',
+      },
+    });
+    if (!response.ok) {
+      throw new Error(' error');
+    }
+    const data = await response.json();
+
+    result.textContent = data.joke;
+  } catch (error) {
+    console.log(error.message);
+    result.textContent = 'There was an error...';
+  }
+};
+
+fetchDadJoke();
