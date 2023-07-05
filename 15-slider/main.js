@@ -1,24 +1,43 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.nextBtn');
+const prevBtn = document.querySelector('.prevBtn');
+slides.forEach(function (slide, index) {
+	slide.style.left = `${index * 100}%`;
+});
+let counter = 0;
+nextBtn.addEventListener('click', function () {
+	counter++;
+	carousel();
+});
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+prevBtn.addEventListener('click', function () {
+	counter--;
+	carousel();
+});
 
-setupCounter(document.querySelector('#counter'))
+function carousel() {
+	// working with slides
+	// if (counter === slides.length) {
+	//   counter = 0;
+	// }
+	// if (counter < 0) {
+	//   counter = slides.length - 1;
+	// }
+	// working with buttons
+
+	if (counter < slides.length - 1) {
+		nextBtn.style.display = 'block';
+	} else {
+		nextBtn.style.display = 'none';
+	}
+	if (counter > 0) {
+		prevBtn.style.display = 'block';
+	} else {
+		prevBtn.style.display = 'none';
+	}
+	slides.forEach(function (slide) {
+		slide.style.transform = `translateX(-${counter * 100}%)`;
+	});
+}
+
+prevBtn.style.display = 'none';
