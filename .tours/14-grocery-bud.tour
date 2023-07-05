@@ -1,12 +1,6 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
   "title": "14-grocery-bud",
-  "steps": [
-    {
-      "file": "14-grocery-bud/main.js",
-      "description": "if (value !== '' && editFlag === False) {\r\n\t\tconsole.log('add item to the list');\r\n\t} else if (value !== '' && editFlag === true) {\r\n\t\tconsole.log('editing');\r\n\t} else {\r\n\t\tconsole.log('empty value');\r\n\t}",
-      "line": 26
-    }
-  ],
+  "steps": [],
   "ref": "main"
 }
